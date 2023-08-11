@@ -28,7 +28,17 @@ const generateurBulle = () => {
     const plusMoins = Math.random() > 0.5 ? 1 : -1;
     // Injecter un mouvement sur la gauche de notre animation
     bulle.style.setProperty("--left", Math.random() * 100 * plusMoins + "%");
+
+    // on cree un evenement qui fait disparaitre la bulle au click
+    bulle.addEventListener("click", () =>{
+        bulle.remove();
+    })
+
+    // on cree un setTimeout pour que la bulle disparait à un moment donnée.
+    setTimeout(() => {
+        bulle.remove()
+    }, 8000);
 };
 // Ensuite on peut appeler la fonction dans le setInterval.
-setInterval(generateurBulle, 300);
+setInterval(generateurBulle, 400);
 
