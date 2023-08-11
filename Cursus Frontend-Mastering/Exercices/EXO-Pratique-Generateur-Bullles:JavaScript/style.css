@@ -8,7 +8,7 @@ body {
   border-radius: 300px;
   background: rgba(255, 166, 0, 0.6);
   opacity: 0;
-  animation: anim 8s;
+  animation: anim 5s;
 
   /* hue-rotate permet de passer differente couleur selon le degré. */
   filter: hue-rotate(0deg);
@@ -23,5 +23,11 @@ body {
     opacity: 1;
     filter: hue-rotate(720deg);
   }  
+}
+h3 {
+  text-align: center;
+  font-size: 10rem;
+  margin-top: 20px;
+  color: rgba(129, 129, 129, 0.693);
 }
 

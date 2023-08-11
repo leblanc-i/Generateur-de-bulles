@@ -1,3 +1,5 @@
+const compteurDisplay = document.querySelector("h3");
+let compteur = 0;
 // On creer une fonction qui permet de generer de bulles aleatoirement.
 const generateurBulle = () => {
     // Creation d'element dans notre HTML avec JS.
@@ -31,14 +33,16 @@ const generateurBulle = () => {
 
     // on cree un evenement qui fait disparaitre la bulle au click
     bulle.addEventListener("click", () =>{
+        compteur++
+        compteurDisplay.textContent = compteur;
         bulle.remove();
     })
 
     // on cree un setTimeout pour que la bulle disparait à un moment donnée.
     setTimeout(() => {
         bulle.remove()
-    }, 8000);
+    },3000);
 };
 // Ensuite on peut appeler la fonction dans le setInterval.
-setInterval(generateurBulle, 400);
+setInterval(generateurBulle, 300);
 
