@@ -22,9 +22,13 @@ const generateurBulle = () => {
     bulle.style.top = Math.random() * 100 + 50 + "%"; // genere une position aleatoire à la verticale de nimimum 50% du top(haut).
     bulle.style.left = Math.random() * 100 + "%"; // genere une position aleatoire à l'horizontale. 
 
+    // On cree une variable qui nous permet d'equilibrer le positionnement de notre anim
+    // si le resultat de --left Math.random() est superieur à 0.5 d'ajouter 1
+    // si le resultat de --left Math.random() est inferieur à 0.5 d'ajouter -1
+    const plusMoins = Math.random() > 0.5 ? 1 : -1;
     // Injecter un mouvement sur la gauche de notre animation
-    bulle.style.setProperty("--left", Math.random() * 100 + "%")
-}
-// Ensuite on peut appeler la fonction dans le setInterval
-setInterval(generateurBulle, 300)
+    bulle.style.setProperty("--left", Math.random() * 100 * plusMoins + "%");
+};
+// Ensuite on peut appeler la fonction dans le setInterval.
+setInterval(generateurBulle, 300);
 
